@@ -20,12 +20,11 @@ const App = () => {
   
   useEffect( ()=> {
     getRecipes();
-  },[query,recipes,search]);
+  }, [getRecipes]);
   //[]이 비어있으면 오직 첫 렌더시에만 작동하나. counter 를 삽입하며 counter 가 변경시 useEffect가 작동한다
   //search를 입력시 유저가 입력할시마다 아래의 페치가 렌더된다..그럼 페치가 너무 자주 됨.
   //그래서 query 를 만들어서 query 삽입=> now submit 버튼 누를 떄만 렌더가 됨
 
-  
   const updateSearch = e => {
     setSearch(e.target.value)
     // console.log(search);
